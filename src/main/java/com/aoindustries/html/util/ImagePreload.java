@@ -22,7 +22,7 @@
  */
 package com.aoindustries.html.util;
 
-import com.aoindustries.html.any.AnyDocument;
+import com.aoindustries.html.any.AnyScriptSupportingContent;
 import java.io.IOException;
 
 /**
@@ -41,8 +41,8 @@ public class ImagePreload {
 	 * @param url This should be the URL-encoded URL, but with only a standalone ampersand (&amp;) as parameter separator
 	 *             (not &amp;amp;)
 	 */
-	public static void writeImagePreloadScript(String url, AnyDocument<?> document) throws IOException {
-		document.script().out(script -> script.indent()
+	public static void writeImagePreloadScript(String url, AnyScriptSupportingContent<?, ?> content) throws IOException {
+		content.script().out(script -> script.indent()
 			.append("var img=new Image();").nli()
 			.append("img.src=").text(url).append(';')
 		).__();

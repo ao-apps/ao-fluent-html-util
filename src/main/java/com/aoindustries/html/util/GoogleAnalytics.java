@@ -23,8 +23,9 @@
 package com.aoindustries.html.util;
 
 import com.aoindustries.encoding.Doctype;
-import com.aoindustries.html.any.AnyDocument;
 import com.aoindustries.html.any.AnyLINK;
+import com.aoindustries.html.any.AnyScriptSupportingContent;
+import com.aoindustries.html.any.AnyUnion_Metadata_Phrasing;
 import com.aoindustries.lang.Strings;
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -46,14 +47,14 @@ public class GoogleAnalytics {
 	 *
 	 * @param trackingId  No script will be written when {@code null} or empty (after trimming)
 	 */
-	public static void writeGlobalSiteTag(AnyDocument<?> document, String trackingId) throws IOException {
+	public static void writeGlobalSiteTag(AnyUnion_Metadata_Phrasing<?, ?> content, String trackingId) throws IOException {
 		String trimmedId = Strings.trimNullIfEmpty(trackingId);
 		if(trimmedId != null) {
 			// See https://rehmann.co/blog/optimize-google-analytics-google-tag-manager-via-preconnect-headers/
-			document.link(AnyLINK.Rel.DNS_PREFETCH).href("https://www.google-analytics.com").__();
-			document.link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com").crossorigin(AnyLINK.Crossorigin.ANONYMOUS).__();
-			// .out.write("<!-- Global site tag (gtag.js) - Google Analytics -->").autoNl()
-			document
+			content
+				.link(AnyLINK.Rel.DNS_PREFETCH).href("https://www.google-analytics.com").__()
+				.link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com").crossorigin(AnyLINK.Crossorigin.ANONYMOUS).__()
+				// .out.write("<!-- Global site tag (gtag.js) - Google Analytics -->").autoNl()
 				.script().async(true).src("https://www.googletagmanager.com/gtag/js?id=" + URLEncoder.encode(trimmedId, "UTF-8")).__()
 				.script().out(script -> script.indent()
 					.append("window.dataLayer = window.dataLayer || [];").nli()
@@ -72,10 +73,10 @@ public class GoogleAnalytics {
 	 * @param trackingId  No script will be written when {@code null} or empty (after trimming)
 	 */
 	// TODO: Support hitType exception? https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference
-	public static void writeAnalyticsJs(AnyDocument<?> document, String trackingId) throws IOException {
+	public static void writeAnalyticsJs(AnyScriptSupportingContent<?, ?> content, String trackingId) throws IOException {
 		String trimmedId = Strings.trimNullIfEmpty(trackingId);
 		if(trimmedId != null) {
-			document.script().out(script -> script.indent()
+			content.script().out(script -> script.indent()
 				.append("(function(i,s,o,g,r,a,m){i[\"GoogleAnalyticsObject\"]=r;i[r]=i[r]||function(){").nli()
 				.append("(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),").nli()
 				.append("m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)").nli()
