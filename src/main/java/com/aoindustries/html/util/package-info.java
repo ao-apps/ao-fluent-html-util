@@ -22,6 +22,6 @@
  */
 
 /**
- * Common utilities using {@linkplain com.aoindustries.html high-performance HTML generation}.
+ * Common utilities using {@linkplain com.aoindustries.html.any high-performance HTML generation}.
  */
 package com.aoindustries.html.util;
