@@ -37,6 +37,7 @@ along with ao-fluent-html-util.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2021-03-15T13:05:48-05:00"
+		dateModified="2021-03-17T09:23:47-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -45,11 +46,20 @@ along with ao-fluent-html-util.  If not, see <http://www.gnu.org/licenses />.
 				groupId="@{project.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{project.scm.url}"
-			>
-				<ul>
-					<li>Split utilities into this new sub-project.</li>
-				</ul>
-			</changelog:release>
+			/>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="0.4.0"
+			datePublished="2021-03-17T09:23:47-05:00"
+			groupId="@{project.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{project.scm.url}"
+		>
+			<ul>
+				<li>Split utilities into this new sub-project.</li>
+			</ul>
+		</changelog:release>
 	</core:page>
 </jsp:root>
