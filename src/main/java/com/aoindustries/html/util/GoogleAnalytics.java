@@ -29,6 +29,7 @@ import com.aoindustries.html.any.AnyUnion_Metadata_Phrasing;
 import com.aoindustries.lang.Strings;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Writes various versions of Google Analytics tracking scripts.
@@ -55,7 +56,7 @@ public class GoogleAnalytics {
 				.link(AnyLINK.Rel.DNS_PREFETCH).href("https://www.google-analytics.com").__()
 				.link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com").crossorigin(AnyLINK.Crossorigin.ANONYMOUS).__()
 				// .out.write("<!-- Global site tag (gtag.js) - Google Analytics -->").autoNl()
-				.script().async(true).src("https://www.googletagmanager.com/gtag/js?id=" + URLEncoder.encode(trimmedId, "UTF-8")).__()
+				.script().async(true).src("https://www.googletagmanager.com/gtag/js?id=" + URLEncoder.encode(trimmedId, StandardCharsets.UTF_8)).__()
 				.script().out(script -> script.indent()
 					.append("window.dataLayer = window.dataLayer || [];").nli()
 					.append("function gtag(){dataLayer.push(arguments);}").nli()
