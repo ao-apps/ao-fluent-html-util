@@ -20,9 +20,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-fluent-html-util.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoindustries.html.util;
+package com.aoapps.html.util;
 
-import com.aoindustries.html.any.AnyScriptSupportingContent;
+import com.aoapps.html.any.AnyScriptSupportingContent;
 import java.io.IOException;
 
 /**

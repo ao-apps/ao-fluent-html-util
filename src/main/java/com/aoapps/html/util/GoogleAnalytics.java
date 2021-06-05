@@ -20,13 +20,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-fluent-html-util.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoindustries.html.util;
+package com.aoapps.html.util;
 
-import com.aoindustries.encoding.Doctype;
-import com.aoindustries.html.any.AnyLINK;
-import com.aoindustries.html.any.AnyScriptSupportingContent;
-import com.aoindustries.html.any.AnyUnion_Metadata_Phrasing;
-import com.aoindustries.lang.Strings;
+import com.aoapps.encoding.Doctype;
+import com.aoapps.html.any.AnyLINK;
+import com.aoapps.html.any.AnyScriptSupportingContent;
+import com.aoapps.html.any.AnyUnion_Metadata_Phrasing;
+import com.aoapps.lang.Strings;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
