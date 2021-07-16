@@ -9,6 +9,12 @@
 
 [![Build](https://github.com/aoindustries/ao-fluent-html-util/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/ao-fluent-html-util/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-fluent-html-util/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-fluent-html-util)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-util&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=com.aoapps%3Aao-fluent-html-util)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-util&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-util&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-util&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-util&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-util&metric=security_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-util&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-util&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-util&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-util&metric=coverage)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-util&metric=Coverage)
 
 Utilities for Fluent Java DSL for high-performance HTML generation.
 
