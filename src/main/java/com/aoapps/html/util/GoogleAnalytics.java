@@ -36,10 +36,10 @@ import java.nio.charset.StandardCharsets;
  *
  * @author  AO Industries, Inc.
  */
-public class GoogleAnalytics {
+public abstract class GoogleAnalytics {
 
-	// Make no instances
-	private GoogleAnalytics() {}
+	/** Make no instances. */
+	private GoogleAnalytics() {throw new AssertionError();}
 
 	/**
 	 * Writes the modern Google Analytics <a href="https://support.google.com/analytics/answer/1008080?hl=en&amp;ref_topic=1008079#GA">Global Site Tag</a>.

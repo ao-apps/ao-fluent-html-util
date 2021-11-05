@@ -30,10 +30,10 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
-public class ImagePreload {
+public abstract class ImagePreload {
 
-	// Make no instances
-	private ImagePreload() {}
+	/** Make no instances. */
+	private ImagePreload() {throw new AssertionError();}
 
 	/**
 	 * Prints a JavaScript script that will preload the image at the provided URL.
