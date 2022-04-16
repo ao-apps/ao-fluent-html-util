@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-util - Utilities for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,4 +24,5 @@
 /**
  * Common utilities using {@linkplain com.aoapps.html.any high-performance HTML generation}.
  */
+
 package com.aoapps.html.util;
