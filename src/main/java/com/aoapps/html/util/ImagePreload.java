@@ -33,19 +33,21 @@ import java.io.IOException;
  */
 public final class ImagePreload {
 
-	/** Make no instances. */
-	private ImagePreload() {throw new AssertionError();}
+  /** Make no instances. */
+  private ImagePreload() {
+    throw new AssertionError();
+  }
 
-	/**
-	 * Prints a JavaScript script that will preload the image at the provided URL.
-	 *
-	 * @param url This should be the URL-encoded URL, but with only a standalone ampersand (&amp;) as parameter separator
-	 *             (not &amp;amp;)
-	 */
-	public static void writeImagePreloadScript(String url, AnyScriptSupportingContent<?, ?> content) throws IOException {
-		content.script().out(script -> script.indent()
-			.append("var img=new Image();").nli()
-			.append("img.src=").text(url).append(';')
-		).__();
-	}
+  /**
+   * Prints a JavaScript script that will preload the image at the provided URL.
+   *
+   * @param url This should be the URL-encoded URL, but with only a standalone ampersand (&amp;) as parameter separator
+   *             (not &amp;amp;)
+   */
+  public static void writeImagePreloadScript(String url, AnyScriptSupportingContent<?, ?> content) throws IOException {
+    content.script().out(script -> script.indent()
+      .append("var img=new Image();").nli()
+      .append("img.src=").text(url).append(';')
+    ).__();
+  }
 }

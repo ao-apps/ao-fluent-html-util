@@ -38,22 +38,24 @@ import java.io.IOException;
  */
 public final class HeadUtil {
 
-	/** Make no instances. */
-	private HeadUtil() {throw new AssertionError();}
+  /** Make no instances. */
+  private HeadUtil() {
+    throw new AssertionError();
+  }
 
-	/**
-	 * Adds the standard minimal meta tags.
-	 */
-	@SuppressWarnings("deprecation")
-	public static void standardMeta(AnyUnion_Metadata_Phrasing<?, ?> head, String contentType) throws IOException {
-		if(head.getDocument().encodingContext.getDoctype() == Doctype.HTML5) {
-			head.meta().charset().__();
-		} else {
-			head
-				.meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_TYPE).content(contentType).__()
-				// Default style language
-				.meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_STYLE_TYPE).content(AnySTYLE.Type.TEXT_CSS).__()
-				.meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_SCRIPT_TYPE).content(AnySCRIPT.Type.TEXT_JAVASCRIPT).__();
-		}
-	}
+  /**
+   * Adds the standard minimal meta tags.
+   */
+  @SuppressWarnings("deprecation")
+  public static void standardMeta(AnyUnion_Metadata_Phrasing<?, ?> head, String contentType) throws IOException {
+    if (head.getDocument().encodingContext.getDoctype() == Doctype.HTML5) {
+      head.meta().charset().__();
+    } else {
+      head
+        .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_TYPE).content(contentType).__()
+        // Default style language
+        .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_STYLE_TYPE).content(AnySTYLE.Type.TEXT_CSS).__()
+        .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_SCRIPT_TYPE).content(AnySCRIPT.Type.TEXT_JAVASCRIPT).__();
+    }
+  }
 }
