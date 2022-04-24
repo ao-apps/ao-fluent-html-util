@@ -56,16 +56,16 @@ public final class GoogleAnalytics {
     if (trimmedId != null) {
       // See https://rehmann.co/blog/optimize-google-analytics-google-tag-manager-via-preconnect-headers/
       content
-        .link(AnyLINK.Rel.DNS_PREFETCH).href("https://www.google-analytics.com").__()
-        .link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com").crossorigin(AnyLINK.Crossorigin.ANONYMOUS).__()
-        // .out.write("<!-- Global site tag (gtag.js) - Google Analytics -->").autoNl()
-        .script().async(true).src("https://www.googletagmanager.com/gtag/js?id=" + URLEncoder.encode(trimmedId, StandardCharsets.UTF_8)).__()
-        .script().out(script -> script.indent()
-          .append("window.dataLayer = window.dataLayer || [];").nli()
-          .append("function gtag(){dataLayer.push(arguments);}").nli()
-          .append("gtag(\"js\", new Date());").nli()
-          .append("gtag(\"config\", ").text(trimmedId).append(");")
-        ).__();
+          .link(AnyLINK.Rel.DNS_PREFETCH).href("https://www.google-analytics.com").__()
+          .link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com").crossorigin(AnyLINK.Crossorigin.ANONYMOUS).__()
+          // .out.write("<!-- Global site tag (gtag.js) - Google Analytics -->").autoNl()
+          .script().async(true).src("https://www.googletagmanager.com/gtag/js?id=" + URLEncoder.encode(trimmedId, StandardCharsets.UTF_8)).__()
+          .script().out(script -> script.indent()
+              .append("window.dataLayer = window.dataLayer || [];").nli()
+              .append("function gtag(){dataLayer.push(arguments);}").nli()
+              .append("gtag(\"js\", new Date());").nli()
+              .append("gtag(\"config\", ").text(trimmedId).append(");")
+      ).__();
     }
   }
 
@@ -81,12 +81,12 @@ public final class GoogleAnalytics {
     String trimmedId = Strings.trimNullIfEmpty(trackingId);
     if (trimmedId != null) {
       content.script().out(script -> script.indent()
-        .append("(function(i,s,o,g,r,a,m){i[\"GoogleAnalyticsObject\"]=r;i[r]=i[r] || function(){").nli()
-        .append("(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),").nli()
-        .append("m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)").nli()
-        .append("})(window,document,\"script\",\"https://www.google-analytics.com/analytics.js\",\"ga\");").nli()
-        .append("ga(\"create\",").text(trimmedId).append(",\"auto\");").nli()
-        .append("ga(\"send\",\"pageview\");")
+              .append("(function(i,s,o,g,r,a,m){i[\"GoogleAnalyticsObject\"]=r;i[r]=i[r] || function(){").nli()
+              .append("(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),").nli()
+              .append("m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)").nli()
+              .append("})(window,document,\"script\",\"https://www.google-analytics.com/analytics.js\",\"ga\");").nli()
+              .append("ga(\"create\",").text(trimmedId).append(",\"auto\");").nli()
+              .append("ga(\"send\",\"pageview\");")
       ).__();
     }
   }

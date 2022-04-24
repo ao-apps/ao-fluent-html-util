@@ -52,10 +52,10 @@ public final class HeadUtil {
       head.meta().charset().__();
     } else {
       head
-        .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_TYPE).content(contentType).__()
-        // Default style language
-        .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_STYLE_TYPE).content(AnySTYLE.Type.TEXT_CSS).__()
-        .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_SCRIPT_TYPE).content(AnySCRIPT.Type.TEXT_JAVASCRIPT).__();
+          .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_TYPE).content(contentType).__()
+          // Default style language
+          .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_STYLE_TYPE).content(AnySTYLE.Type.TEXT_CSS).__()
+          .meta().httpEquiv(AnyMETA.HttpEquiv.CONTENT_SCRIPT_TYPE).content(AnySCRIPT.Type.TEXT_JAVASCRIPT).__();
     }
   }
 }
