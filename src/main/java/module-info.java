@@ -26,4 +26,4 @@ module com.aoapps.html.util {
   requires com.aoapps.encoding; // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>
   requires com.aoapps.html.any; // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId>
   requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
-}
+} // TODO: Avoiding rewrite-maven-plugin-4.22.2 truncation
