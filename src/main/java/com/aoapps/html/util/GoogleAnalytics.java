@@ -81,12 +81,12 @@ public final class GoogleAnalytics {
     String trimmedId = Strings.trimNullIfEmpty(trackingId);
     if (trimmedId != null) {
       content.script().out(script -> script.indent()
-              .append("(function(i,s,o,g,r,a,m){i[\"GoogleAnalyticsObject\"]=r;i[r]=i[r] || function(){").nli()
-              .append("(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),").nli()
-              .append("m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)").nli()
-              .append("})(window,document,\"script\",\"https://www.google-analytics.com/analytics.js\",\"ga\");").nli()
-              .append("ga(\"create\",").text(trimmedId).append(",\"auto\");").nli()
-              .append("ga(\"send\",\"pageview\");")
+          .append("(function(i,s,o,g,r,a,m){i[\"GoogleAnalyticsObject\"]=r;i[r]=i[r] || function(){").nli()
+          .append("(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),").nli()
+          .append("m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)").nli()
+          .append("})(window,document,\"script\",\"https://www.google-analytics.com/analytics.js\",\"ga\");").nli()
+          .append("ga(\"create\",").text(trimmedId).append(",\"auto\");").nli()
+          .append("ga(\"send\",\"pageview\");")
       ).__();
     }
   }

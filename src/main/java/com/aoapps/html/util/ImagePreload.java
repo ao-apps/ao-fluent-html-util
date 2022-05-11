@@ -46,8 +46,8 @@ public final class ImagePreload {
    */
   public static void writeImagePreloadScript(String url, AnyScriptSupportingContent<?, ?> content) throws IOException {
     content.script().out(script -> script.indent()
-            .append("var img=new Image();").nli()
-            .append("img.src=").text(url).append(';')
+        .append("var img=new Image();").nli()
+        .append("img.src=").text(url).append(';')
     ).__();
   }
 }
