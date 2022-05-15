@@ -37,7 +37,7 @@ along with ao-fluent-html-util.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2021-03-15T13:05:48-05:00"
-    dateModified="2022-05-04T04:08:06-05:00"
+    dateModified="2022-05-15T02:24:41-05:00"
   >
     <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
       <changelog:release
@@ -47,14 +47,23 @@ along with ao-fluent-html-util.  If not, see <https://www.gnu.org/licenses/>.
         artifactId="@{documented.artifactId}"
         repository="@{nexusUrl}content/repositories/snapshots/"
         scmUrl="@{project.scm.url}"
-      >
-        <ul>
-          <li>Updated dependencies.</li>
-          <li>New method <code>HeadUtil.standardMeta(…)</code> that adds the most basic standard meta elements.</li>
-          <li>Performed <ao:a href="https://checkstyle.org/">Checkstyle</ao:a> clean-up.</li>
-        </ul>
-      </changelog:release>
+      />
     </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.7.0"
+      datePublished="2022-05-15T02:24:41-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Updated dependencies.</li>
+        <li>New method <code>HeadUtil.standardMeta(…)</code> that adds the most basic standard meta elements.</li>
+        <li>Performed <ao:a href="https://checkstyle.org/">Checkstyle</ao:a> clean-up.</li>
+      </ul>
+    </changelog:release>
 
     <changelog:release
       projectName="@{documented.name}"
