@@ -25,7 +25,7 @@ along with ao-fluent-html-util.  If not, see <https://www.gnu.org/licenses/>.
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.aoapps</groupId><artifactId>ao-oss-parent</artifactId><version>1.18.0-POST-SNAPSHOT</version>
+    <groupId>com.aoapps</groupId><artifactId>ao-oss-parent</artifactId><version>1.18.0<!-- -POST-SNAPSHOT --></version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
@@ -111,6 +111,20 @@ along with ao-fluent-html-util.  If not, see <https://www.gnu.org/licenses/>.
     </repository>
   </repositories>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <ignoredDependencies>
+            <!-- No "module-info.java" in some release builds -->
+            <dependency>com.aoapps:ao-collections</dependency>
+          </ignoredDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <profiles>
     <profile>
       <id>offlineLinks</id><activation><file><exists>src/main/java</exists></file></activation>
@@ -173,23 +187,23 @@ along with ao-fluent-html-util.  If not, see <https://www.gnu.org/licenses/>.
     <dependencies>
       <!-- Direct -->
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId><version>7.0.0${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId><version>7.0.0<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId><version>0.7.0${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId><version>0.7.0<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><version>5.2.0${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><version>5.2.0<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <!-- Transitive -->
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId><version>3.0.0${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId><version>3.0.0<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId><version>5.1.0${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId><version>5.1.0<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-tempfiles</artifactId><version>3.0.0${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>ao-tempfiles</artifactId><version>3.0.0<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
     </dependencies>
   </dependencyManagement>
