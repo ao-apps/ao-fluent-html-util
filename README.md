@@ -22,7 +22,7 @@ Utilities for Fluent Java DSL for high-performance HTML generation.
 * [Project Home](https://oss.aoapps.com/fluent-html/util/)
 * [Changelog](https://oss.aoapps.com/fluent-html/util/changelog)
 * [API Docs](https://oss.aoapps.com/fluent-html/util/apidocs/)
-* [Maven Central Repository](https://search.maven.org/artifact/com.aoapps/ao-fluent-html-util)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.aoapps&q=a%3Aao-fluent-html-util)
 * [GitHub](https://github.com/ao-apps/ao-fluent-html-util)
 
 ## Contact Us
