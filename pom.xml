@@ -30,7 +30,7 @@ along with ao-fluent-html-util.  If not, see <https://www.gnu.org/licenses/>.
   </parent>
 
   <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-util</artifactId><version>0.7.0-POST-SNAPSHOT</version>
-  <packaging>bundle</packaging>
+  <packaging>jar</packaging>
 
   <properties>
     <module.name>com.aoapps.html.util</module.name>
