@@ -75,8 +75,11 @@ public final class GoogleAnalytics {
    * This should be added first, or very high up, in the <code>&lt;head&gt;</code>.
    *
    * @param trackingId  No script will be written when {@code null} or empty (after trimming)
+   *
+   * @deprecated  All sites should be HTML 5 now, please use {@link #writeGlobalSiteTag(com.aoapps.html.any.AnyUnion_Metadata_Phrasing, java.lang.String)}.
    */
   // TODO: Support hitType exception? https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference
+  @Deprecated
   public static void writeAnalyticsJs(AnyScriptSupportingContent<?, ?> content, String trackingId) throws IOException {
     String trimmedId = Strings.trimNullIfEmpty(trackingId);
     if (trimmedId != null) {
