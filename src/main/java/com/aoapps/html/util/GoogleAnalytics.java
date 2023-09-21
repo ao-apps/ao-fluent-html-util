@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-util - Utilities for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -54,11 +54,11 @@ public final class GoogleAnalytics {
   public static void writeGlobalSiteTag(AnyUnion_Metadata_Phrasing<?, ?> content, String trackingId) throws IOException {
     String trimmedId = Strings.trimNullIfEmpty(trackingId);
     if (trimmedId != null) {
-      // See https://rehmann.co/blog/optimize-google-analytics-google-tag-manager-via-preconnect-headers/
+      // See https://blog.luke.lol/webmaster/optimize-google-analytics-google-tag-manager-via-preconnect-headers/
       content
-          .link(AnyLINK.Rel.DNS_PREFETCH).href("https://www.google-analytics.com").__()
-          .link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com").crossorigin(AnyLINK.Crossorigin.ANONYMOUS).__()
-          // .out.write("<!-- Global site tag (gtag.js) - Google Analytics -->").autoNl()
+          .link(AnyLINK.Rel.DNS_PREFETCH).href("https://www.google-analytics.com/").__()
+          .link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com/").crossorigin(AnyLINK.Crossorigin.ANONYMOUS).__()
+          // .out.write("<!-- Google tag (gtag.js) -->").autoNl()
           .script().async(true).src("https://www.googletagmanager.com/gtag/js?id=" + URLEncoder.encode(trimmedId, StandardCharsets.UTF_8)).__()
           .script().out(script -> script.indent()
               .append("window.dataLayer = window.dataLayer || [];").nli()
