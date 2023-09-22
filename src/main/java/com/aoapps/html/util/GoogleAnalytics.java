@@ -51,6 +51,7 @@ public final class GoogleAnalytics {
    *
    * @param trackingId  No script will be written when {@code null} or empty (after trimming)
    */
+  // Matches ao-ant-tasks:InsertGoogleAnalyticsTracking.java:generateGlobalSiteTag
   public static void writeGlobalSiteTag(AnyUnion_Metadata_Phrasing<?, ?> content, String trackingId) throws IOException {
     String trimmedId = Strings.trimNullIfEmpty(trackingId);
     if (trimmedId != null) {
