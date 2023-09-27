@@ -27,6 +27,7 @@ import com.aoapps.encoding.Doctype;
 import com.aoapps.html.any.AnyLINK;
 import com.aoapps.html.any.AnyScriptSupportingContent;
 import com.aoapps.html.any.AnyUnion_Metadata_Phrasing;
+import com.aoapps.html.any.attributes.enumeration.Crossorigin;
 import com.aoapps.lang.Strings;
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -58,7 +59,7 @@ public final class GoogleAnalytics {
       // See https://blog.luke.lol/webmaster/optimize-google-analytics-google-tag-manager-via-preconnect-headers/
       content
           .link(AnyLINK.Rel.DNS_PREFETCH).href("https://www.google-analytics.com/").__()
-          .link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com/").crossorigin(AnyLINK.Crossorigin.ANONYMOUS).__()
+          .link(AnyLINK.Rel.PRECONNECT).href("https://www.google-analytics.com/").crossorigin(Crossorigin.Value.ANONYMOUS).__()
           // .out.write("<!-- Google tag (gtag.js) -->").autoNl()
           .script().async(true).src("https://www.googletagmanager.com/gtag/js?id=" + URLEncoder.encode(trimmedId, StandardCharsets.UTF_8)).__()
           .script().out(script -> script.indent()
