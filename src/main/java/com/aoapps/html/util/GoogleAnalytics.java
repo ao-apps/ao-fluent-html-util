@@ -95,4 +95,20 @@ public final class GoogleAnalytics {
       ).__();
     }
   }
+
+  /**
+   * Calls {@link #writeGlobalSiteTag(com.aoapps.html.any.AnyUnion_Metadata_Phrasing, java.lang.String)} for {@link Doctype#HTML5},
+   * or calls {@link #writeAnalyticsJs(com.aoapps.html.any.AnyScriptSupportingContent, java.lang.String)} for all other doctypes.
+   * This should be added first, or very high up, in the <code>&lt;head&gt;</code>.
+   *
+   * @param trackingId  No script will be written when {@code null} or empty (after trimming)
+   */
+  public static void writeScriptByDoctype(AnyUnion_Metadata_Phrasing<?, ?> content, String trackingId) throws IOException {
+    Doctype doctype = content.getDocument().encodingContext.getDoctype();
+    if (doctype == Doctype.HTML5) {
+      writeGlobalSiteTag(content, trackingId);
+    } else {
+      writeAnalyticsJs(content, trackingId);
+    }
+  }
 }
