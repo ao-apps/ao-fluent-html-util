@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-util - Utilities for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -81,7 +81,7 @@ public final class GoogleAnalytics {
    * @deprecated  All sites should be HTML 5 now, please use {@link #writeGlobalSiteTag(com.aoapps.html.any.AnyUnion_Metadata_Phrasing, java.lang.String)}.
    */
   // TODO: Support hitType exception? https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public static void writeAnalyticsJs(AnyScriptSupportingContent<?, ?> content, String trackingId) throws IOException {
     String trimmedId = Strings.trimNullIfEmpty(trackingId);
     if (trimmedId != null) {
